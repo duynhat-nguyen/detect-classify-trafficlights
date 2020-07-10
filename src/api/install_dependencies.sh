@@ -5,3 +5,4 @@ pip install --user jupyter
 pip install --user matplotlib
 pip install --user tf_slim
 pip install --user pycocotools
+pip install --user tensorboardcolab

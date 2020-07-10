@@ -4,3 +4,4 @@ pip install --user contextlib2
 pip install --user jupyter
 pip install --user matplotlib
 pip install --user tf_slim
+pip install --user pycocotools

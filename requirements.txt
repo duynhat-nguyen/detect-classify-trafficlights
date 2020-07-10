@@ -1,0 +1,6 @@
+streamlit
+cv2
+pandas
+numpy
+altair
+tensorflow

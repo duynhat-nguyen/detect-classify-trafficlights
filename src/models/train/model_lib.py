@@ -624,7 +624,7 @@ def create_model_fn(detection_model_fn, configs, hparams=None, use_tpu=False,
             train_config.keep_checkpoint_every_n_hours)
         saver = tf.train.Saver(
             variables_to_restore,
-            keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours)
+            keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours, max_to_keep=None)
         scaffold = tf.train.Scaffold(saver=saver)
 
     # EVAL executes on CPU, so use regular non-TPU EstimatorSpec.
@@ -644,7 +644,7 @@ def create_model_fn(detection_model_fn, configs, hparams=None, use_tpu=False,
         saver = tf.train.Saver(
             sharded=True,
             keep_checkpoint_every_n_hours=keep_checkpoint_every_n_hours,
-            save_relative_paths=True)
+            save_relative_paths=True, max_to_keep=None)
         tf.add_to_collection(tf.GraphKeys.SAVERS, saver)
         scaffold = tf.train.Scaffold(saver=saver)
       return tf.estimator.EstimatorSpec(

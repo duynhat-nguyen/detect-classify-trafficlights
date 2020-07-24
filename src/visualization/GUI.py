@@ -42,7 +42,7 @@ def check_train_set():
         })
         return summary
 
-    train_label_file = "/home/nhat/Github/workspace/training_demo/annotations/train_labels.csv"
+    train_label_file = "/content/detect-classify-trafficlights/data/tfod/train/_annotations.csv"
 
     metadata = load_metadata(train_label_file)
 
@@ -50,7 +50,7 @@ def check_train_set():
 
     selected_frame_index, selected_frame = frame_selector_ui(summary)
 
-    image_path = os.path.join("training_demo/images/train/", selected_frame)
+    image_path = os.path.join("/content/detect-classify-trafficlights/data/tfod/train/", selected_frame)
 
     image = load_image(image_path)
 

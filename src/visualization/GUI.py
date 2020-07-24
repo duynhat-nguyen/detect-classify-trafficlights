@@ -103,7 +103,7 @@ def frame_selector_ui(summary):
     vline = alt.Chart(selected_frame_df).mark_rule(color="red").encode(
         alt.X("selected_frame:Q", axis=None)
     )
-    st.sidebar.altair_chart(alt.layer(chart, vline, width=300))
+    # st.sidebar.altair_chart(alt.layer(chart, vline, width=300))
 
     selected_frame = selected_frames[selected_frame_index]
     return selected_frame_index, selected_frame

@@ -69,7 +69,7 @@ def check_train_set():
 
     image = load_image(image_path)
 
-    st.write(image_path)
+    st.text(image_path)
     
     boxes = metadata[metadata.filename == selected_frame].drop(columns=["filename", "width", "height"])
     

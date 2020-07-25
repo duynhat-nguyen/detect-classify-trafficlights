@@ -122,7 +122,7 @@ def frame_selector_ui(summary):
     vline = alt.Chart(selected_frame_df).mark_rule(color="red").encode(
         alt.X("selected_frame:Q", axis=None)
     )
-    # st.sidebar.altair_chart(alt.layer(chart, vline, width=300))
+    st.sidebar.altair_chart(alt.layer(chart, vline, width=300))
 
     selected_frame = selected_frames[selected_frame_index]
     return selected_frame_index, selected_frame
@@ -148,7 +148,6 @@ def get_selected_frames(summary, label, min_elts, max_elts):
     return summary[np.logical_and(summary[label] >= min_elts, summary[label] <= max_elts)].index
 
 def inference(image_path):
-    st.write("Hello from inference")
     PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
     PATH_TO_LABELS = "/content/detect-classify-trafficlights/data/tfrecord/train/trafficlights_label_map.pbtxt"
     NUM_CLASSES = 2 #remember number of objects you are training? cool.

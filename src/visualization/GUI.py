@@ -41,24 +41,22 @@ def main():
 def info():
     print("Hello from info")
 
+
+@st.cache
+def load_metadata(path):
+    return pd.read_csv(path)
+
+# This function uses some Pandas magic to summarize the metadata Dataframe.
+@st.cache
+def create_summary(metadata):
+    one_hot_encoded = pd.get_dummies(metadata[["filename", "class"]], columns=["class"])
+    summary = one_hot_encoded.groupby(["filename"]).sum().rename(columns={
+        "class_green": "green",
+        "class_red": "red",
+    })
+    return summary
+
 def check_train_set():
-    # st.write("Hello from run_the_app")
-
-    @st.cache
-    def load_metadata(path):
-        return pd.read_csv(path)
-
-
-    # This function uses some Pandas magic to summarize the metadata Dataframe.
-    @st.cache
-    def create_summary(metadata):
-        one_hot_encoded = pd.get_dummies(metadata[["filename", "class"]], columns=["class"])
-        summary = one_hot_encoded.groupby(["filename"]).sum().rename(columns={
-            "class_green": "green",
-            "class_red": "red",
-        })
-        return summary
-
     train_label_file = "/content/detect-classify-trafficlights/data/tfod/train/_annotations.csv"
 
     metadata = load_metadata(train_label_file)

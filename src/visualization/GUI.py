@@ -36,7 +36,7 @@ def main():
     elif app_mode == "Info":
         info()
     elif app_mode == "Inference 1 image":
-        inference()
+        inference_1_image()
     elif app_mode == "Check validation set":
         check_valid_set()
         
@@ -226,6 +226,9 @@ def load_image_into_numpy_array(image):
     (im_width, im_height) = image.size
     return np.array(image.getdata()).reshape(
         (im_height, im_width, 3)).astype(np.uint8)
+
+def inference_1_image():
+    st.text("Hello from inference_1_image() ")
 
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):

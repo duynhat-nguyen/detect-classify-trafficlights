@@ -187,6 +187,7 @@ def inference(image_path):
         instance_masks=output_dict.get('detection_masks'),
         use_normalized_coordinates=True,
         line_thickness=1)
+    st.subheader("Inference")
     st.image(Image.fromarray(image_np), use_column_width=True)
     # print(type(image_np))
 

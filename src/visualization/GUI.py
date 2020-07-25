@@ -29,7 +29,7 @@ def main():
     # Once we have the dependencies, add a selector for the app mode on the sidebar.
     st.sidebar.title("What to do")
     app_mode = st.sidebar.selectbox("Choose the app mode",
-        ["Info", "Check train set", "Inference 1 image"])
+        ["Info", "Check train set","Check validation set", "Inference 1 image"])
 
     if app_mode == "Check train set":
         check_train_set()
@@ -37,6 +37,8 @@ def main():
         info()
     elif app_mode == "Inference 1 image":
         inference()
+    elif app_mode == "Check validation set":
+        
 
 def info():
     print("Hello from info")
@@ -55,6 +57,29 @@ def create_summary(metadata):
         "class_red": "red",
     })
     return summary
+
+def check_valid_set():
+    train_label_file = "/content/detect-classify-trafficlights/data/tfod/valid/_annotations.csv"
+
+    metadata = load_metadata(train_label_file)
+
+    summary = create_summary(metadata)
+
+    selected_frame_index, selected_frame = frame_selector_ui(summary)
+
+    image_path = os.path.join("/content/detect-classify-trafficlights/data/tfod/valid/", selected_frame)
+
+    image = load_image(image_path)
+
+    st.text(image_path)
+    
+    boxes = metadata[metadata.filename == selected_frame].drop(columns=["filename", "width", "height"])
+    
+    st.write(boxes)
+
+    draw_image_with_boxes(image, boxes, "Ground Truth")
+
+    inference(image_path)
 
 def check_train_set():
     train_label_file = "/content/detect-classify-trafficlights/data/tfod/train/_annotations.csv"

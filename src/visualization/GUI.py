@@ -38,6 +38,7 @@ def main():
     elif app_mode == "Inference 1 image":
         inference()
     elif app_mode == "Check validation set":
+        check_valid_set()
         
 
 def info():

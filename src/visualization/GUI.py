@@ -79,6 +79,8 @@ def check_train_set():
 
     draw_image_with_boxes(image, boxes, "Ground Truth")
 
+    inference(image_path)
+
     # Uncomment these lines to peek at these DataFrames.
     # st.write('## Metadata', metadata[:], '## Summary', summary[:])
 
@@ -145,7 +147,7 @@ def draw_image_with_boxes(image, boxes, header):
 def get_selected_frames(summary, label, min_elts, max_elts):
     return summary[np.logical_and(summary[label] >= min_elts, summary[label] <= max_elts)].index
 
-def inference():
+def inference(image_path):
     st.write("Hello from inference")
     PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
     PATH_TO_LABELS = "/content/detect-classify-trafficlights/data/tfrecord/train/trafficlights_label_map.pbtxt"
@@ -185,8 +187,8 @@ def inference():
         instance_masks=output_dict.get('detection_masks'),
         use_normalized_coordinates=True,
         line_thickness=1)
-    display(Image.fromarray(image_np))
-    print(type(image_np))
+    st.image(Image.fromarray(image_np))
+    # print(type(image_np))
 
 @st.cache(show_spinner=False)
 def load_image(image_path):

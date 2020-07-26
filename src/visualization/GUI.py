@@ -193,7 +193,6 @@ def inference(image_path):
     IMAGE_SIZE = (12, 8)
 
     image_tmp = Image.open(image_path)
-    image = image_tmp.resize((1280, 720))
     # the array based representation of the image will be used later in order to prepare the
     # result image with boxes and labels on it.
     image_np = load_image_into_numpy_array(image)

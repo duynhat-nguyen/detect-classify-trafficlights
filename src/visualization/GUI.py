@@ -233,6 +233,7 @@ def inference_1_image():
     if image_path is not None:
         image = Image.open(image_path)
         st.image(image, use_column_width=True)
+    inference(image_path)
 
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):

@@ -231,7 +231,7 @@ def inference_1_image():
     st.set_option('deprecation.showfileUploaderEncoding', False)
     image_path = st.file_uploader("Image for inference")
     if image_path is not None:
-        image = Image.load(image_path)
+        image = Image.open(image_path)
         st.image(image)
 
 ### Function to run inference on a single image which will later be used in an iteration

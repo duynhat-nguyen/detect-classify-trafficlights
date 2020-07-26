@@ -31,13 +31,13 @@ def main():
     app_mode = st.sidebar.selectbox("Choose the app mode",
         ["Info", "Train set","Validation set", "Inference 1 image"])
 
-    if app_mode == "Check train set":
+    if app_mode == "Train set":
         check_train_set()
     elif app_mode == "Info":
         info()
     elif app_mode == "Inference 1 image":
         inference_1_image()
-    elif app_mode == "Check validation set":
+    elif app_mode == "Validation set":
         check_valid_set()
         
 

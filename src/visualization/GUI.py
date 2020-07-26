@@ -24,12 +24,12 @@ from object_detection.utils import visualization_utils as vis_util
 
 
 def main():
-    st.title("Traffic lights detection and classification")
+    st.title("Traffic lights detection")
 
     # Once we have the dependencies, add a selector for the app mode on the sidebar.
     st.sidebar.title("What to do")
     app_mode = st.sidebar.selectbox("Choose the app mode",
-        ["Info", "Check train set","Check validation set", "Inference 1 image"])
+        ["Info", "Train set","Validation set", "Inference 1 image"])
 
     if app_mode == "Check train set":
         check_train_set()

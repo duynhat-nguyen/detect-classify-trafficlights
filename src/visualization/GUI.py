@@ -192,8 +192,8 @@ def inference(image_path):
     # TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(0, 2) ]
     IMAGE_SIZE = (12, 8)
 
-    image = Image.open(image_path)
-    image = image.resize((1280, 720))
+    image_tmp = Image.open(image_path)
+    image = image_tmp.resize((1280, 720))
     # the array based representation of the image will be used later in order to prepare the
     # result image with boxes and labels on it.
     image_np = load_image_into_numpy_array(image)

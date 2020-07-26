@@ -229,6 +229,9 @@ def load_image_into_numpy_array(image):
 
 def inference_1_image():
     st.text("Hello from inference_1_image() ")
+    image_path = st.file_uploader("Image for inference", type="jpg")
+    if image_path is not None:
+        st.text("Hi from there")
 
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):

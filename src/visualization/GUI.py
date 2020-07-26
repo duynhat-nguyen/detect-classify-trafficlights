@@ -232,7 +232,7 @@ def inference_1_image():
     image_path = st.file_uploader("Image for inference")
     if image_path is not None:
         image = Image.open(image_path)
-        st.image(image)
+        st.image(image, use_column_width=True)
 
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):

@@ -228,14 +228,11 @@ def load_image_into_numpy_array(image):
         (im_height, im_width, 3)).astype(np.uint8)
 
 def inference_1_image():
-#     image_path = st.file_uploader("Image for inference", type="jpg")
-#     if image_path is not None:
-#         image = load_image(image_path)
-#         st.write(image)
-        
-    file_buffer = st.file_uploader(...)
-    text_io = io.TextIOWrapper(file_buffer)
-    st.write(type(text_io))
+    st.set_option('deprecation.showfileUploaderEncoding', False)
+    image_path = st.file_uploader("Image for inference")
+    if image_path is not None:
+        image = load_image(image_path)
+        st.image(image)
 
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):

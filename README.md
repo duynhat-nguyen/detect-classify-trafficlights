@@ -1,5 +1,5 @@
-# Traffic lights detection and classification
-The aim of this repository is to detect and classify traffic lights signals (only red and green). This is the final course project of Pattern Recognition course at [University of Information Technology](uit.edu.vn).
+# Traffic lights detection
+The aim of this repository is to detect traffic lights (only red and green). This is the final course project of Pattern Recognition course at [University of Information Technology](uit.edu.vn).
 ```
 .
 ├── data

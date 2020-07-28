@@ -17,6 +17,7 @@ from collections import defaultdict
 from io import StringIO
 from matplotlib import pyplot as plt
 from PIL import Image
+from glob import glob
 
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
@@ -237,6 +238,14 @@ def inference_1_image():
         st.image(image, use_column_width=True)
         inference(image_path)
 
+def model_ui():
+    models_path = glob("/content/drive/My\ Drive/detect-classify-trafficlights/tf1/exported/ssd")
+    models_list = []
+    for i in models_path:
+        models_list.append(os.path.basename(i))
+    model_selection = st.sidebar.selectbox("Use which model?", models_list)
+        
+        
 ### Function to run inference on a single image which will later be used in an iteration
 def run_inference_for_single_image(image, graph):
   with graph.as_default():

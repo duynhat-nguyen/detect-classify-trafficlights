@@ -177,7 +177,7 @@ def inference(image_path):
     PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/" + model_selection + "/frozen_inference_graph.pb"
     
     # PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
-    st.text(PATH_TO_FROZEN_GRAPH)
+    # st.text(PATH_TO_FROZEN_GRAPH)
     PATH_TO_LABELS = "/content/detect-classify-trafficlights/data/tfrecord/train/trafficlights_label_map.pbtxt"
     NUM_CLASSES = 2 #remember number of objects you are training? cool.
 
@@ -243,6 +243,7 @@ def inference_1_image():
         inference(image_path)
 
 def model_ui():
+    st.sidebar.markdown("# Model")
     models_path = glob("/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/*")
     models_list = []
     for i in models_path:

@@ -174,7 +174,7 @@ def get_selected_frames(summary, label, min_elts, max_elts):
 
 def inference(image_path):
     model_selection = model_ui()
-    PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/" + model_selection + "frozen_inference_graph.pb"
+    PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/" + model_selection + "/frozen_inference_graph.pb"
     
     # PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
     st.text(PATH_TO_FROZEN_GRAPH)

@@ -82,6 +82,8 @@ def check_valid_set():
     draw_image_with_boxes(image, boxes, "Ground Truth")
 
     inference(image_path)
+    
+    model_ui()
 
 def check_train_set():
     train_label_file = "/content/detect-classify-trafficlights/data/tfod/train/_annotations.csv"
@@ -105,6 +107,8 @@ def check_train_set():
     draw_image_with_boxes(image, boxes, "Ground Truth")
 
     inference(image_path)
+    
+    model_ui()
 
     # Uncomment these lines to peek at these DataFrames.
     # st.write('## Metadata', metadata[:], '## Summary', summary[:])

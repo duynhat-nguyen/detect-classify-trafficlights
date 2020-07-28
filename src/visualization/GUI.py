@@ -243,7 +243,7 @@ def inference_1_image():
         inference(image_path)
 
 def model_ui():
-    models_path = glob("/content/drive/My\ Drive/detect-classify-trafficlights/tf1/exported/ssd")
+    models_path = glob("/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/*")
     models_list = []
     for i in models_path:
         models_list.append(os.path.basename(i))

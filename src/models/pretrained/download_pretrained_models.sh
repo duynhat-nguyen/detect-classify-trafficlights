@@ -1,5 +1,4 @@
 mkdir -p ./models/pretrained/ssd
-mkdir ./models/pretrained/faster_rcnn
 cd ./models/pretrained/ssd
 
 # SSD Inception V2

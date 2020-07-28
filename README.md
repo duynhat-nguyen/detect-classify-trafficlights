@@ -41,9 +41,12 @@ The aim of this repository is to detect traffic lights (only red and green). Thi
 - I used Tensorflow Object Detection API which is install in a [Colab notebook](https://colab.research.google.com/drive/10wn1XnTjOgupefn-csrjH7KZwYk79bqQ?usp=sharing). More information of how to used a pre-trained model from Tensorflow Model Zoo can be found [here](https://github.com/tensorflow/models/tree/master/research/object_detection). 
 
 3. Models  
-- I first used SSD Inception V2. 
+- SSD Inception V2
+- SSD MobileNet V2
+- SSD ResNet 50 FPN
 
-4. GUI app  
-My [GUI app](https://github.com/nhat-nguyenduy/traffic-lights-detection-classification/blob/master/GUI.py) was created based [an app](https://github.com/streamlit/demo-self-driving) using [Streamlit library](https://www.streamlit.io/)
+4. Training
+Use [this notebook] for training. 
 
-5. How to run  
+5. Inference
+Use [this notebook] for inference. The [GUI app](https://github.com/nhat-nguyenduy/traffic-lights-detection-classification/blob/master/GUI.py) was created based [an app](https://github.com/streamlit/demo-self-driving) using [Streamlit library](https://www.streamlit.io/)

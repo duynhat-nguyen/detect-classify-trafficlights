@@ -45,8 +45,8 @@ The aim of this repository is to detect traffic lights (only red and green). Thi
 - SSD MobileNet V2
 - SSD ResNet 50 FPN
 
-4. Training
-Use [this notebook] for training. 
+4. Training  
+Use [this notebook](https://colab.research.google.com/drive/10wn1XnTjOgupefn-csrjH7KZwYk79bqQ?usp=sharing) for training. 
 
-5. Inference
-Use [this notebook] for inference. The [GUI app](https://github.com/nhat-nguyenduy/traffic-lights-detection-classification/blob/master/GUI.py) was created based [an app](https://github.com/streamlit/demo-self-driving) using [Streamlit library](https://www.streamlit.io/)
+5. Inference  
+Use [this notebook](https://colab.research.google.com/drive/1vuXUlLNloK0Su6kdDDoDWtgEvsMZdEMV?usp=sharing) for inference. The [GUI app](https://github.com/nhat-nguyenduy/traffic-lights-detection-classification/blob/master/GUI.py) was created based [an app](https://github.com/streamlit/demo-self-driving) using [Streamlit library](https://www.streamlit.io/)

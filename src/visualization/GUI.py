@@ -82,8 +82,6 @@ def check_valid_set():
     draw_image_with_boxes(image, boxes, "Ground Truth")
 
     inference(image_path)
-    
-    model_ui()
 
 def check_train_set():
     train_label_file = "/content/detect-classify-trafficlights/data/tfod/train/_annotations.csv"
@@ -107,8 +105,6 @@ def check_train_set():
     draw_image_with_boxes(image, boxes, "Ground Truth")
 
     inference(image_path)
-    
-    model_ui()
 
     # Uncomment these lines to peek at these DataFrames.
     # st.write('## Metadata', metadata[:], '## Summary', summary[:])
@@ -177,7 +173,11 @@ def get_selected_frames(summary, label, min_elts, max_elts):
     return summary[np.logical_and(summary[label] >= min_elts, summary[label] <= max_elts)].index
 
 def inference(image_path):
-    PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
+    model_selection = model_ui()
+    PATH_TO_FROZEN_GRAPH = ""/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/" + model_selection + "frozen_inference_graph.pb"
+    
+    # PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/ssd_inception_v2_coco/frozen_inference_graph.pb"
+    st.text(PATH_TO_FROZEN_GRAPH)
     PATH_TO_LABELS = "/content/detect-classify-trafficlights/data/tfrecord/train/trafficlights_label_map.pbtxt"
     NUM_CLASSES = 2 #remember number of objects you are training? cool.
 
@@ -248,6 +248,7 @@ def model_ui():
     for i in models_path:
         models_list.append(os.path.basename(i))
     model_selection = st.sidebar.selectbox("Use which model?", models_list)
+    return model_selection
         
         
 ### Function to run inference on a single image which will later be used in an iteration

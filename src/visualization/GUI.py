@@ -202,10 +202,7 @@ def inference(image_path):
     # result image with boxes and labels on it.
     # image = image.resize((1280, 720), Image.ANTIALIAS)
     
-    # image = load_image(image_path)
-    image = cv2.imread(image_path)
-    image = cv2.resize(image, (1280, 720))
-    image = image[:, :, [2, 1, 0]] # BGR -> RGB
+    image = load_image(image_path)
     
     # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
@@ -243,11 +240,11 @@ def load_image_into_numpy_array(image):
 
 def inference_1_image():
     st.set_option('deprecation.showfileUploaderEncoding', False)
-    image_path = st.file_uploader("Image for inference")
+    image_io = st.file_uploader("Image for inference")
     if image_path is not None:
-        image = Image.open(image_path)
+        image = Image.open(image_io)
         st.image(image, use_column_width=True)
-        st.text(image_path)
+        image_path = cv2.imdecode(np.fromstring(image_io.read(), np.uint8), 1)
         inference(image_path)
 
 def model_ui():

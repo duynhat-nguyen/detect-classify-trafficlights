@@ -239,8 +239,9 @@ def load_image_into_numpy_array(image):
 
 def inference_1_image():
     image = upload_image()
-    st.image(image, use_column_width=True)
-    inference(image)
+    if image is not None:
+        st.image(image, use_column_width=True)
+        inference(image)
 
 def model_ui():
     st.sidebar.markdown("# Model")

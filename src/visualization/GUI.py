@@ -249,7 +249,7 @@ def inference_1_image():
 #         inference(image_path)
     if image_io is not None:
         # Convert the file to an opencv image.
-        file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+        file_bytes = np.asarray(bytearray(image_io.read()), dtype=np.uint8)
         opencv_image = cv2.imdecode(file_bytes, 1)
 
         # Now do something with the image! For example, let's display it:

@@ -43,7 +43,8 @@ def main():
         
 
 def info():
-    print("Hello from info")
+    st.text("Detect traffic lights (only red and green). This is the final course project of Pattern Recognition course at University of Information Technology.")
+    st.text("Github: https://github.com/nhat-nguyenduy/detect-classify-trafficlights"
 
 
 @st.cache

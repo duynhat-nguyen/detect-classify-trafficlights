@@ -247,6 +247,7 @@ def inference_1_image():
     if image_path is not None:
         image = Image.open(image_path)
         st.image(image, use_column_width=True)
+        st.text(image_path)
         inference(image_path)
 
 def model_ui():

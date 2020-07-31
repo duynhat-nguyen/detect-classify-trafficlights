@@ -205,6 +205,7 @@ def inference(image):
     # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
     # image_np_expanded = np.expand_dims(image_np, axis=0)
+    image_np = image
     image_np_expanded = image.reshape(1, image.shape[0], image.shape[1], 3)
     # Actual detection.
     output_dict = run_inference_for_single_image(image_np_expanded, detection_graph)
@@ -238,6 +239,7 @@ def load_image_into_numpy_array(image):
 
 def inference_1_image():
     image = upload_image()
+    st.image(image, use_column_width=True)
     inference(image)
 
 def model_ui():

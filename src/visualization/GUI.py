@@ -227,6 +227,7 @@ def inference(image_path):
 @st.cache(show_spinner=False)
 def load_image(image_path):
     image = cv2.imread(image_path)
+    image = cv2.resize(image, (1280, 720))
     image = image[:, :, [2, 1, 0]] # BGR -> RGB
     return image
 

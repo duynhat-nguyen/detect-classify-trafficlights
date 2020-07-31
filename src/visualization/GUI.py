@@ -172,7 +172,7 @@ def draw_image_with_boxes(image, boxes, header):
 def get_selected_frames(summary, label, min_elts, max_elts):
     return summary[np.logical_and(summary[label] >= min_elts, summary[label] <= max_elts)].index
 
-def inference(image_path):
+def inference(image):
     model_selection = model_ui()
     PATH_TO_FROZEN_GRAPH = "/content/drive/My Drive/detect-classify-trafficlights/tf1/exported/ssd/" + model_selection + "/frozen_inference_graph.pb"
     
@@ -201,9 +201,6 @@ def inference(image_path):
     # the array based representation of the image will be used later in order to prepare the
     # result image with boxes and labels on it.
     # image = image.resize((1280, 720), Image.ANTIALIAS)
-    
-    image = load_image(image_path)
-    st.text(image_path)
     
     # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
@@ -311,6 +308,16 @@ def run_inference_for_single_image(image, graph):
       if 'detection_masks' in output_dict:
         output_dict['detection_masks'] = output_dict['detection_masks'][0]
   return output_dict
+
+def upload_image():
+    st.set_option('deprecation.showfileUploaderEncoding', False)
+    image_io = st.file_uploader("Image for inference")
+    if image_io is not None:
+        # Convert the file to an opencv image.
+        file_bytes = np.asarray(bytearray(image_io.read()), dtype=np.uint8)
+        image = cv2.imdecode(file_bytes, 1)
+        image = image[:, :, [2, 1, 0]]  # BGR2RGB
+        return image
 
 if __name__ == "__main__":
     main()

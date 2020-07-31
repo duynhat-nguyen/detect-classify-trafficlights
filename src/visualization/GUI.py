@@ -43,8 +43,8 @@ def main():
         
 
 def info():
-    st.text("Detect traffic lights (only red and green). This is the final course project of Pattern Recognition course at University of Information Technology.")
-    st.text("Github: https://github.com/nhat-nguyenduy/detect-classify-trafficlights")
+    st.write("Detect traffic lights (only red and green). This is the final course project of Pattern Recognition course at University of Information Technology.")
+    st.write("Github: https://github.com/nhat-nguyenduy/detect-classify-trafficlights")
             
 @st.cache
 def load_metadata(path):

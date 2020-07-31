@@ -206,7 +206,8 @@ def inference(image_path):
     
     # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
-    image_np_expanded = np.expand_dims(image_np, axis=0)
+    # image_np_expanded = np.expand_dims(image_np, axis=0)
+    image_np_expanded = image.reshape(1, image.shape[0], image.shape[1], 3)
     # Actual detection.
     output_dict = run_inference_for_single_image(image_np_expanded, detection_graph)
     # Visualization of the results of a detection.

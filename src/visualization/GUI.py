@@ -242,11 +242,18 @@ def load_image_into_numpy_array(image):
 def inference_1_image():
     st.set_option('deprecation.showfileUploaderEncoding', False)
     image_io = st.file_uploader("Image for inference")
+#     if image_io is not None:
+#         image = Image.open(image_io)
+#         st.image(image, use_column_width=True)
+#         image_path = cv2.imdecode(np.fromstring(image_io.read(), np.uint8), 1)
+#         inference(image_path)
     if image_io is not None:
-        image = Image.open(image_io)
-        st.image(image, use_column_width=True)
-        image_path = cv2.imdecode(np.fromstring(image_io.read(), np.uint8), 1)
-        inference(image_path)
+        # Convert the file to an opencv image.
+        file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+        opencv_image = cv2.imdecode(file_bytes, 1)
+
+        # Now do something with the image! For example, let's display it:
+        st.image(opencv_image, channels="BGR")
 
 def model_ui():
     st.sidebar.markdown("# Model")

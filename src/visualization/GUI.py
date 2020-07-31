@@ -209,7 +209,12 @@ def inference(image):
     image_np = image
     image_np_expanded = image.reshape(1, image.shape[0], image.shape[1], 3)
     # Actual detection.
+    import time
+    start = time.perf_counter()
     output_dict = run_inference_for_single_image(image_np_expanded, detection_graph)
+    elapsed = time.perf_counter() - start
+    # print('Elapsed %.3f seconds.' % elapsed)
+    st.text('Elapsed %.3f seconds.' % elapsed)
     # Visualization of the results of a detection.
     vis_util.visualize_boxes_and_labels_on_image_array(
         image_np,

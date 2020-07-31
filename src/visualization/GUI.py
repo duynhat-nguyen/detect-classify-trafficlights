@@ -71,8 +71,6 @@ def check_valid_set():
 
     image_path = os.path.join("/content/detect-classify-trafficlights/data/tfod/valid/", selected_frame)
 
-    image = load_image(image_path)
-
     st.text(image_path)
     
     boxes = metadata[metadata.filename == selected_frame].drop(columns=["filename", "width", "height"])
@@ -93,8 +91,6 @@ def check_train_set():
     selected_frame_index, selected_frame = frame_selector_ui(summary)
 
     image_path = os.path.join("/content/detect-classify-trafficlights/data/tfod/train/", selected_frame)
-
-    image = load_image(image_path)
 
     st.text(image_path)
     

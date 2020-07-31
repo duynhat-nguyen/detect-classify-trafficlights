@@ -203,6 +203,7 @@ def inference(image_path):
     # image = image.resize((1280, 720), Image.ANTIALIAS)
     
     image = load_image(image_path)
+    st.text(image_path)
     
     # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]

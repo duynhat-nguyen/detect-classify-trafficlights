@@ -197,14 +197,14 @@ def inference(image_path):
     # TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(0, 2) ]
     IMAGE_SIZE = (12, 8)
 
-    image = Image.open(image_path)
+    # image = Image.open(image_path)
     # the array based representation of the image will be used later in order to prepare the
     # result image with boxes and labels on it.
-    image = image.resize((1280, 720), Image.ANTIALIAS)
+    # image = image.resize((1280, 720), Image.ANTIALIAS)
     
-    # image = load_image(image_path)
+    image = load_image(image_path)
     
-    image_np = load_image_into_numpy_array(image)
+    # image_np = load_image_into_numpy_array(image)
     # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
     image_np_expanded = np.expand_dims(image_np, axis=0)
     # Actual detection.

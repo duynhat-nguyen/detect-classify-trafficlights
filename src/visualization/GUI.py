@@ -76,9 +76,11 @@ def check_valid_set():
     boxes = metadata[metadata.filename == selected_frame].drop(columns=["filename", "width", "height"])
     
     st.write(boxes)
-
-    draw_image_with_boxes(image, boxes, "Ground Truth")
+    
     image = load_image(image_path)
+    
+    draw_image_with_boxes(image, boxes, "Ground Truth")
+    
     inference(image)
 
 def check_train_set():
@@ -97,10 +99,11 @@ def check_train_set():
     boxes = metadata[metadata.filename == selected_frame].drop(columns=["filename", "width", "height"])
     
     st.write(boxes)
-
-    draw_image_with_boxes(image, boxes, "Ground Truth")
     
     image = load_image(image_path)
+    
+    draw_image_with_boxes(image, boxes, "Ground Truth")
+    
     inference(image)
 
     # Uncomment these lines to peek at these DataFrames.

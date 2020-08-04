@@ -50,3 +50,6 @@ Use [this notebook](https://colab.research.google.com/drive/10wn1XnTjOgupefn-csr
 
 5. Inference  
 Use [this notebook](https://colab.research.google.com/drive/1vuXUlLNloK0Su6kdDDoDWtgEvsMZdEMV?usp=sharing) for inference. The [GUI app](https://github.com/nhat-nguyenduy/traffic-lights-detection-classification/blob/master/GUI.py) was created based [an app](https://github.com/streamlit/demo-self-driving) using [Streamlit library](https://www.streamlit.io/)
+
+6. Simple Demo  
+[This is a recored demo of the project](https://drive.google.com/file/d/1OfkVfHVAm_xhxD_0fnxFHUT9uNCK93PC/view?usp=sharing)

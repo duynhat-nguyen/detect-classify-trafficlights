@@ -38,7 +38,7 @@ The aim of this repository is to detect traffic lights (only red and green). Thi
 - After that, I used [labelImg](https://github.com/tzutalin/labelImg) to label my images with 2 class green and red (Pascal VOC format). Because my dataset has 80 images (<1000) so I can use [Roboflow](https://roboflow.ai/) to create the TFRecord file from the images and labels.
 
 2. Install  
-- I used Tensorflow Object Detection API which is install in a [Colab notebook](https://colab.research.google.com/drive/10wn1XnTjOgupefn-csrjH7KZwYk79bqQ?usp=sharing). More information of how to used a pre-trained model from Tensorflow Model Zoo can be found [here](https://github.com/tensorflow/models/tree/master/research/object_detection). 
+- I used Tensorflow Object Detection API which is installed in a [Colab notebook](https://colab.research.google.com/drive/10wn1XnTjOgupefn-csrjH7KZwYk79bqQ?usp=sharing). More information of how to use a pre-trained model from Tensorflow Model Zoo can be found [here](https://github.com/tensorflow/models/tree/master/research/object_detection). 
 
 3. Models  
 - SSD Inception V2

@@ -53,3 +53,6 @@ Use [this notebook](https://colab.research.google.com/drive/1vuXUlLNloK0Su6kdDDo
 
 6. Simple Demo  
 [This is a recored demo of the project](https://drive.google.com/file/d/1OfkVfHVAm_xhxD_0fnxFHUT9uNCK93PC/view?usp=sharing)
+
+7. Link to report (in Vietnamese)
+
